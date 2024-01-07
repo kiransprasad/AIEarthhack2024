@@ -6,8 +6,13 @@ import Table from "./components/Table/Table";
 function Home() {
     return (
     <div className="home-container">
-        <h1>AIEarthHack 2024</h1>
-      
+        <div className="banner">
+            <h1>AIEarthHack 2024</h1>
+        </div>
+
+        <div className="home-content">
+            <p>Lorem Ipsum</p>
+        </div>
     </div>
     );
 }
