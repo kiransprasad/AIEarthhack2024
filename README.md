@@ -80,16 +80,16 @@ Which of the following GenAI tools did you use in creating your project?
 
 If applicable, how does your tool use generative AI innovatively? Were there any unexpected outcomes or surprising findings when applying generative AI to your solution? (Max. 100 words)
 
-> TBD (Arjun)
+> TBD
 
 What other technologies, tools, or platforms did you use for your project, e.g., external APIs, SDKs, frontend cloud. <br />
 If this question does not apply to your project, please feel free to write "NA".
 
-> TBD
+> We used a Python backend and React for the frontend of our applications. We used the HuggingFace transformers library alongside TensorFlow/Pytorch in order to use both Google's T5 LLM for ZSC (Zero-Shot Classification), and OpenAI's GPT-2 LLM for the generation of solutions given a problem query.
 
 How do you plan to implement or deploy this tool? Describe the technical and logistical requirements for your tool’s deployment.
 
-> TBD
+> Since this is a React Web Application, we intend to deploy this tool as an online web app using a hosting service such as GoDaddy. Additionally, with some modifications to the frontend, this application can be translated from React to React Native, where we could release it as a mobile application on the Apple App Store and Google Play Store.
 
 If you were to be selected as a finalist in this hackathon, what are your plans for further development or improvement before the in-person presentation on January 18th, 2024 at Microsoft Toronto?
 
