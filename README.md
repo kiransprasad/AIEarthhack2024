@@ -80,7 +80,7 @@ Which of the following GenAI tools did you use in creating your project?
 
 If applicable, how does your tool use generative AI innovatively? Were there any unexpected outcomes or surprising findings when applying generative AI to your solution? (Max. 100 words)
 
-> TBD (Arjun)
+> Our solution uses T5 which scores the given dataset on factors such as relevant, feasibility etc. which uses the Zero-Shot classification model. This works since the data is not objectively classified into whether any problem fits a certain category well or not before-hand, and the T5 model is able to not only give the appropriate scores to all of the data, it filters out data which is completely irrelevant or incomplete before the user can see it on the front-end. The backend of our application also uses GPT-2 to generate responses.
 
 What other technologies, tools, or platforms did you use for your project, e.g., external APIs, SDKs, frontend cloud. <br />
 If this question does not apply to your project, please feel free to write "NA".
@@ -93,7 +93,7 @@ How do you plan to implement or deploy this tool? Describe the technical and log
 
 If you were to be selected as a finalist in this hackathon, what are your plans for further development or improvement before the in-person presentation on January 18th, 2024 at Microsoft Toronto?
 
-> TBD
+> If we get selected as finalists, we will train on top of a LLM model using the training data we were given to meet our metric requirements as closely as possible. The metric requirements were created using T-5, and it already filtered out the data which was extremely irrelevant. This can be used to generate objectively good solutions to any problem that the user may enter along the lines of circular economies and sustainability. 
 
 Would you consider allowing others to contribute to your project by making certain elements of it open-source approach?
 
