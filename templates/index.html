@@ -1,0 +1,49 @@
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Something</title>
+    </head>
+    <body>
+        <form method="GET">
+            <center><textarea type="text" name="thetext" id="text" rows="30" cols="50" onclick="deletestuff()"></textarea></center>
+            <center><input class="button2" type="submit" value="Find answer!">
+        </form>
+       
+        <center><p id="stuff"></p></center>
+        
+      
+    </body>
+    <script>
+
+        window.onload = function() {
+            word_by_word('Enter a question...');
+        }
+
+        stuff="{{ data }}";
+        if (stuff!="nothing to see" && stuff!=""){    
+            document.getElementById("stuff").innerHTML = stuff;
+        }
+        
+        var flag=false;
+        function deletestuff(){
+            // delete everything from the textbox
+            if(flag==false){
+                document.getElementById("text").value = "";
+                flag=true;
+            }};
+        
+
+        function word_by_word(s){
+            var words = s.split(" ");
+            var i = 0;
+            var timer = setInterval(function(){
+                document.getElementById("text").innerHTML += s[i];
+                i++;
+                if(i >= s.length){
+                    clearInterval(timer);
+                }
+            }, 40);
+        }
+
+    </script>
+</html>
