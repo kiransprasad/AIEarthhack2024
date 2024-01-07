@@ -8,14 +8,14 @@ const columns = [
     {
         name: 'Problem',
         selector: row => row.problem,
-        sortable: true,
-        maxWidth: '30vw'
+        //sortable: true,
+        width: '34vw'
     },
     {
         name: 'Solution',
         selector: row => row.solution,
-        sortable: true,
-        maxWidth: '30vw'
+        //sortable: true,
+        width: '34vw'
     },
     {
         name: 'Relevance',
@@ -25,26 +25,29 @@ const columns = [
         name: 'Feasibility',
         selector: row => row.feasibility,
         sortable: true,
-        format: row => Math.floor((row.feasibility) * 100000) / 1000,
-        maxWidth: '10vw'
+        format: row => (Math.floor((row.feasibility) * 100000) / 1000).toFixed(3).toString() + "%",
+        width: '8vw'
     },
     {
         name: 'Innovation',
         selector: row => row.innovation,
         sortable: true,
-        maxWidth: '10vw'
+        format: row => (Math.floor((row.innovation) * 100000) / 1000).toFixed(3).toString() + "%",
+        width: '8vw'
     },
     {
         name: 'Scalability',
         selector: row => row.scalability,
         sortable: true,
-        maxWidth: '10vw'
+        format: row => (Math.floor((row.scalability) * 100000) / 1000).toFixed(3).toString() + "%",
+        width: '8vw'
     },
     {
-        name: 'Circular Economy',
+        name: 'Circ. Econ',
         selector: row => row.circular_economy,
         sortable: true,
-        maxWidth: '10vw'
+        format: row => (Math.floor((row.circular_economy + 0.1) * 100000) / 1000).toFixed(3).toString() + "%",
+        width: '8vw'
     },
 ];
 
@@ -11798,16 +11801,29 @@ const data = [
         innovation: 0.8200533986091614,
         scalability: 0.8168911933898926,
         circular_economy: 0.5705733299255371
-    }
+    },
+];
+
+const conditionalRowStyles = [
+    {
+        when: row => (row.feasibility + row.innovation + row.scalability)/3 > 0.97,
+        style: {
+            backgroundColor: '#adeead',
+        },
+    },
 ];
 
 export default function Table() {
+
     return (
         <DataTable
             columns={columns}
             data={data}
             fixedHeader
             pagination
+            conditionalRowStyles={conditionalRowStyles}
+            highlightOnHover
+            onRowClicked={row => window.alert(row.problem)} // Eventually link to a new page with all this row's info
         />
     );
 };
