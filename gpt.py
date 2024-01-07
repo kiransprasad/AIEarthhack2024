@@ -33,9 +33,9 @@ def get_answer(prompt):
 
     # Example usage
     if (prompt!=None):
-        problem = "Give a solution: " + str(prompt)
+        problem = "Please provide a solution to the following problem relating to circular economies and/or the environment, and discuss the scalability and feasibility of your approach: " + str(prompt)
         solution = generate_solution(problem)
-        return solution
+        return solution.replace(problem, "")
     return 
 
 
