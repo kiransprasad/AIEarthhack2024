@@ -111,3 +111,21 @@ div.error {
   height:30px;
   width: 500px;
 }
+.home-container {
+  background-image: url('./assets/banner-image.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(20%);
+  height: 100vh;
+  width: 100vw;
+}
+
+.home-container h1 {
+  color: white;
+  font-size: 50px;
+  font-family: "Poppins";
+  text-align: center;
+  margin-top: 0;
+  padding-top: 50px;
+  filter: brightness(100%);
+}
