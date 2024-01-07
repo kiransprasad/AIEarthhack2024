@@ -12,7 +12,8 @@ code {
     monospace;
 }
 
-/* Searchbar */
+/* --------------------------------------------Searchbar------------------------------------------------------------------- */
+
 .search {
   display: flex;
   justify-content: center;
@@ -61,25 +62,84 @@ form button {
   margin-top: 10px; 
 }
 
+
+.search {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.response {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.response h2 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.response p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.loading img {
+  width: 100px;
+  height: 100px;
+}
+
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid #e7195a;
+  color: #e7195a;
+  border-radius: 4px;
+  margin: 250px 0;
+  height:30px;
+  width: 500px;
+}
 .home-container {
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.banner {
+  flex: 2;
   background-image: url('./assets/banner-image.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  filter: brightness(20%);
-  height: 100vh;
-  width: 100vw;
-}
-
-.home-container h1 {
+  background-position: center;
+  filter: brightness(0.2);
   color: white;
   font-size: 50px;
   font-family: "Poppins";
   text-align: center;
   margin-top: 0;
   padding-top: 50px;
-  filter: brightness(100%);
 }
 
 .rdt_TableRow:hover {
   filter: brightness(90%);
+}
+
+.home-content {
+  flex: 1;
+  background-color: #e0e0e0;
+  font-family: "Poppins";
 }

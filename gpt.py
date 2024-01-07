@@ -32,7 +32,6 @@ def get_answer(prompt):
         solution = tokenizer.decode(output[0], skip_special_tokens=True)
         return solution
 
-    # Example usage
     if prompt is not None:
         problem = "Please provide a detailed solution to the following problem relating to circular economies and/or the environment, and discuss the scalability and feasibility of your approach " + str(prompt)
         solution = generate_solution(problem)
@@ -48,9 +47,12 @@ def index():
         text = request.get_data(as_text=True)
         print(text)
         text = text.replace("\n","")
-        answer = get_answer(text)
-        json_string = json.dumps(answer)
-        return jsonify({'problem':text, 'answer':answer})
+        try:
+            answer = get_answer(text)
+            json_string = json.dumps(answer)
+            return jsonify({'problem':text, 'answer':answer}),200 #OK
+        except:
+            return jsonify({'error':'Please wait some time, your tokens need to be reset!'}), 404 #404 Not found
 
 if __name__=='__main__':
     main.run()
