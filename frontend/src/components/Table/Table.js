@@ -1,4 +1,5 @@
 import DataTable from 'react-data-table-component';
+//import {useNavigate} from 'react-router-dom';
 
 const columns = [
     {
@@ -11815,6 +11816,9 @@ const conditionalRowStyles = [
 
 export default function Table() {
 
+    //const navigate = useNavigate();
+    //const handleOnClick = (row) => navigate('/TBD', { state: row });
+
     return (
         <DataTable
             columns={columns}
@@ -11823,7 +11827,7 @@ export default function Table() {
             pagination
             conditionalRowStyles={conditionalRowStyles}
             highlightOnHover
-            onRowClicked={row => window.alert(row.problem)} // Eventually link to a new page with all this row's info
+            //onRowClicked={row => handleOnClick(row)} // Eventually link to a new page with all this row's info
         />
     );
 };
