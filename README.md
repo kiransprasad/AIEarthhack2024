@@ -66,7 +66,7 @@ Can you describe the process of training the model? Describe any data sources us
 
 How did you validate the accuracy and reliability of your tool? Describe any evaluation framework or metrics used to test the performance of your tool. (Max. 150 words)
 
-> TBD
+> When running the AI on different metrics, we manually confirmed that outliers in each metric were being assessed correctly, and continuously fine-tuned the classification parameters until we were satisfied with the sample data we tested on. However, given the largely subjective nature of the data and metrics, these are not something that could necessarily be "confirmed" by an external tool or algorithm.
 
 Which of the following GenAI tools did you use in creating your project?
 - Closed-source model, e.g., GPT-3.5/4, OpenAI's Assistant API, Claude 2, Gemini
@@ -76,9 +76,11 @@ Which of the following GenAI tools did you use in creating your project?
 - My team did not use GenAI
 - Other:
 
+> Open-source models
+
 If applicable, how does your tool use generative AI innovatively? Were there any unexpected outcomes or surprising findings when applying generative AI to your solution? (Max. 100 words)
 
-> TBD
+> TBD (Arjun)
 
 What other technologies, tools, or platforms did you use for your project, e.g., external APIs, SDKs, frontend cloud. <br />
 If this question does not apply to your project, please feel free to write "NA".
