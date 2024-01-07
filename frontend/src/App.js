@@ -1,10 +1,11 @@
-import Table from "./components/Table/Table";
+// import Table from "./components/Table/Table";
+import SearchForm from "./components/Seachbar/Searchbar"
 
 
 function App() {
   return (
     <div className="App">
-      <Table />
+      <SearchForm />
     </div>
   );
 }

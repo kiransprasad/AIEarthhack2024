@@ -4,16 +4,17 @@ from flask import Flask, render_template, request,json, jsonify
 import requests
 
 def get_answer(prompt):
-    # Load pre-trained GPT-2 model and tokenizer
-    model_name = 'gpt2'
-    tokenizer = GPT2Tokenizer.from_pretrained(model_name)
-    model = GPT2LMHeadModel.from_pretrained(model_name)
+    from transformers import GPT2Tokenizer, GPT2LMHeadModel
 
     def generate_solution(problem):
+        # Load pre-trained GPT-2 model and tokenizer inside the function
+        model_name = 'gpt2'
+        tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+        model = GPT2LMHeadModel.from_pretrained(model_name)
+
         # Tokenize the input problem
         input_ids = tokenizer.encode(problem, return_tensors='pt')
 
-        # Generate a solution using the GPT-2 model
         # Generate a solution using the GPT-2 model
         output = model.generate(
             input_ids,
@@ -32,35 +33,24 @@ def get_answer(prompt):
         return solution
 
     # Example usage
-    if (prompt!=None):
+    if prompt is not None:
         problem = "Please provide a detailed solution to the following problem relating to circular economies and/or the environment, and discuss the scalability and feasibility of your approach " + str(prompt)
         solution = generate_solution(problem)
         return solution.replace(problem, "")
-    return 
+    return None
 
 
 main = Flask(__name__)
 
 @main.route('/', methods=['POST','GET'])
 def index():
-    # text = request.values.get("thetext") #thetext = HTML name tag of input box
-    # # print("hi")
-    # if request.method=="GET":
-    #     answer = get_answer(text)
-    #     json_string = json.dumps(answer)
-    #     return render_template('index.html',problem = json.dumps(text), solution=json_string)
-    
     if request.method=="POST":
         text = request.get_data(as_text=True)
         print(text)
+        text = text.replace("\n","")
         answer = get_answer(text)
         json_string = json.dumps(answer)
         return jsonify({'problem':text, 'answer':answer})
-        
-        
-        
-    # return render_template('index.html', problem = 'nothing to see', solution='nothing to see')
-    
 
 if __name__=='__main__':
     main.run()
