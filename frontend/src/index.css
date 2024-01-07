@@ -11,3 +11,51 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Searchbar */
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh; /* Adjust as needed */
+}
+
+input {
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px; 
+}
+
+/* Style for focused input */
+input:focus {
+  outline: none;
+  border-color: #007bff; /* Change the color as per your design */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Change the color and intensity as per your design */
+}
+
+/* Style for placeholder text */
+input::placeholder {
+  color: #999; /* Change the color as per your design */
+}
+
+/* Style for disabled input */
+input:disabled {
+  background-color: #f4f4f4; /* Change the color as per your design */
+  cursor: not-allowed;
+}
+
+form button {
+  background: #1aac83;
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px; 
+}

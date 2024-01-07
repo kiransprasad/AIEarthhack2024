@@ -1,6 +1,6 @@
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-from flask import Flask, render_template, request,json
+from flask import Flask, render_template, request,json, jsonify
 import requests
 
 def get_answer(prompt):
@@ -43,14 +43,23 @@ main = Flask(__name__)
 
 @main.route('/', methods=['POST','GET'])
 def index():
-    text = request.values.get("thetext") #thetext = HTML name tag of input box
-    # print("hi")
-    if request.method=="GET":
+    # text = request.values.get("thetext") #thetext = HTML name tag of input box
+    # # print("hi")
+    # if request.method=="GET":
+    #     answer = get_answer(text)
+    #     json_string = json.dumps(answer)
+    #     return render_template('index.html',problem = json.dumps(text), solution=json_string)
+    
+    if request.method=="POST":
+        text = request.get_data(as_text=True)
+        print(text)
         answer = get_answer(text)
         json_string = json.dumps(answer)
+        return jsonify({'problem':text, 'answer':answer})
         
-        return render_template('index.html',problem = json.dumps(text), solution=json_string)
-    return render_template('index.html', problem = 'nothing to see', solution='nothing to see')
+        
+        
+    # return render_template('index.html', problem = 'nothing to see', solution='nothing to see')
     
 
 if __name__=='__main__':
