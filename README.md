@@ -1,6 +1,12 @@
 # AIEarthhack2024
 
-# Opportunities to use AI
+# TODO:
+- Create Frontend
+  - Will discuss basic idea
+  - React vs Angular
+  - Communicating with backend
+- Sort via text-based search on front-end
+- Complete Submission Info
 - Generate solutions given a problem
   - Uses GPT or another NLP model trained on the dataset
   - Inputs: problems
@@ -12,6 +18,7 @@
   - Arjun is very confident in his ability to make this happen
   - I believe in him
   - Good luck
+
 
 # Submission Info
 
@@ -97,4 +104,3 @@ Provide an overview of your team’s development process. How did your team appr
 What challenges did you face and how they were overcome?
 
 > TBD
-
