@@ -9,7 +9,9 @@
             <center><input class="button2" type="submit" value="Find answer!">
         </form>
        
-        <center><p id="stuff"></p></center>
+        <center><p id="problem"></p></center>
+        <center>Solution:</center>
+        <center><p id="solution"></p></center>
         
       
     </body>
@@ -19,9 +21,14 @@
             word_by_word('Enter a question...');
         }
 
-        stuff="{{ data }}";
-        if (stuff!="nothing to see" && stuff!=""){    
-            document.getElementById("stuff").innerHTML = stuff;
+
+        problem = "{{ problem }}";
+        solution="{{ solution }}";
+        console.log(problem);
+        console.log(solution);
+        if (solution!=="nothing to see" && solution!==""){    
+            document.getElementById("problem").innerHTML = problem;
+            document.getElementById("solution").innerHTML=solution;
         }
         
         var flag=false;

@@ -33,7 +33,7 @@ def get_answer(prompt):
 
     # Example usage
     if (prompt!=None):
-        problem = "Please provide a solution to the following problem relating to circular economies and/or the environment, and discuss the scalability and feasibility of your approach: " + str(prompt)
+        problem = "Please provide a detailed solution to the following problem relating to circular economies and/or the environment, and discuss the scalability and feasibility of your approach " + str(prompt)
         solution = generate_solution(problem)
         return solution.replace(problem, "")
     return 
@@ -49,8 +49,8 @@ def index():
         answer = get_answer(text)
         json_string = json.dumps(answer)
         
-        return render_template('index.html',data=json_string)
-    return render_template('index.html', data='nothing to see')
+        return render_template('index.html',problem = json.dumps(text), solution=json_string)
+    return render_template('index.html', problem = 'nothing to see', solution='nothing to see')
     
 
 if __name__=='__main__':
