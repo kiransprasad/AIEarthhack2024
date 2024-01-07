@@ -3,6 +3,7 @@ import SearchForm from "./components/Seachbar/Searchbar"
 import Home from "./Home"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Navbar, Container, Nav } from 'react-bootstrap';
+import ViewIdea from "./ViewIdea";
 
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<SearchForm />} />
-        <Route path="/view-all" element={<Home />} />
+        <Route path="/view-all" element={<Table />} />
+        <Route path="/view-idea" element={<ViewIdea />} />
       </Routes>
     </Router>
   );
