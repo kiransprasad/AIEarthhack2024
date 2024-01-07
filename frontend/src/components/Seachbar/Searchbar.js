@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const SearchForm = ()=>{
     const [searchInput, setSearchInput] = useState(''); // the value in the box
     const [responseData, setResponseData] = useState(null); // the response data
+    const [error, setError] = useState(null); //whether there is an error
     
     const handleChange = (e)=>{
         e.preventDefault();
@@ -26,6 +27,11 @@ const SearchForm = ()=>{
 
             setResponseData(json);
             setSearchInput('');
+            setError(null);
+        }
+        else{
+            setError(json.error);
+            setResponseData(null);
         }
     }
 
@@ -56,8 +62,13 @@ const SearchForm = ()=>{
 
             {/* If we're loading */}
             {(responseData && responseData==='loading') &&(
-                <img src="200w.gif" alt="loading"/>
+                <div className="loading">
+                    <img src="200w.gif" alt="loading"/>
+                </div>
             )}
+
+            {/* If we got an error */}
+            {error && <div className="error">{error}</div>}
             
         </div>
     )
