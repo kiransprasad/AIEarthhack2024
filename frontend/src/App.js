@@ -14,8 +14,8 @@ function App() {
           <div className="container">
             <Link to="/" className="filler"><b>AIEarthHack 2024</b></Link>
             <Link to="/">Home</Link>
-            <Link to="/search">Search</Link>
-            <Link to="/view-all">View All</Link>
+            <Link to="/search">AI Search</Link>
+            <Link to="/view-all">View Ideas</Link>
           
           </div>
         </header>
