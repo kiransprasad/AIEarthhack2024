@@ -4,14 +4,13 @@ import Home from "./Home"
 import ViewIdea from "./ViewIdea";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Navbar, Container, Nav } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
 function App() {
   return (
     <Router>
     <Navbar data-bs-theme="dark" expand="lg" className="bg-body-tertiary">
       <Container>
-
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
