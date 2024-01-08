@@ -117,10 +117,12 @@ div.error {
   display: flex;
   justify-content: space-between;
   min-height: 100vh;
+  font-family: "Poppins";
+
 }
 
 .banner {
-  flex: 2;
+  flex: 1;
   background-image: url('./assets/banner-image.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -135,7 +137,10 @@ div.error {
 }
 
 .home-content {
-  flex: 1;
+  flex: 2;
   background-color: #e0e0e0;
   font-family: "Poppins";
+  text-align: center;
+  padding-top: 40vh;
 }
+
