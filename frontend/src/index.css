@@ -194,3 +194,24 @@ div.error {
   margin-left: 1vw;
   margin-right: 1vw;
 }
+
+/* Navbar styling */
+header {
+  background: #2b3035;
+}
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a, header a:hover, header a:active, header a:visited {
+  color: rgba(255, 255, 255, 0.716);
+  text-decoration: none;
+}
+
+.filler{
+  padding-right: 21vw;
+}
