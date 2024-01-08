@@ -93,7 +93,7 @@ How do you plan to implement or deploy this tool? Describe the technical and log
 
 If you were to be selected as a finalist in this hackathon, what are your plans for further development or improvement before the in-person presentation on January 18th, 2024 at Microsoft Toronto?
 
-> If we get selected as finalists, we will use transfer learning to train on top of a large language model using the training data we were given. We would create an adversarial network using the generative AI as the generator and our metric-creating AI as the discriminator in order to generate ideas that meet requirements as closely as possible. The metrics were created using T5, and it already filtered out any data which was found irrelevant. This can be used to generate good solutions (with respect to the measured metrics) to any problem that the user may enter along the lines of circular economies and sustainability. 
+> If we get selected as finalists, we will use transfer learning to train on top of a large language model using the training data we were given. We would create an adversarial network using the generative AI as the generator and our metric-creating AI as the discriminator in order to generate both new solutions to inputted problems and unique problem/solution pairs that meet requirements as closely as possible. The metrics were created using T5, and it already filtered out any data which was found irrelevant. This can be used to generate good solutions (with respect to the measured metrics) to any problem that the user may enter along the lines of circular economies and sustainability. 
 
 Would you consider allowing others to contribute to your project by making certain elements of it open-source approach?
 
