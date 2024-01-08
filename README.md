@@ -79,9 +79,9 @@ Would you consider allowing others to contribute to your project by making certa
 
 > Yes
 
-> Provide an overview of your team’s development process. How did your team approach aspects such as the division of work, and completion of major milestones?
+Provide an overview of your team’s development process. How did your team approach aspects such as the division of work, and completion of major milestones?
 
-Our team created timelines of completion for major components of the project. Our first step was to research and create a plan for the AI model. We approached this aspect freely, with Kiran and Arjun researching potential ways to implement the AI. We looked into Zero-Shot classification as a potential method, then Kiran and Arjun worked on coding and research simulatenously. Once the AI model was completed, we created a front-end application using React, where we identified tasks that needed completing with each person self-assigning the tasks they wanted to complete.
+> Our team created timelines of completion for major components of the project. Our first step was to research and create a plan for the AI model. We approached this aspect freely, with Kiran and Arjun researching potential ways to implement the AI. We looked into Zero-Shot classification as a potential method, then Kiran and Arjun worked on coding and research simulatenously. Once the AI model was completed, we created a front-end application using React, where we identified tasks that needed completing with each person self-assigning the tasks they wanted to complete.
 
 What challenges did you face and how they were overcome?
 
