@@ -1,25 +1,5 @@
 # AIEarthhack2024
 
-# TODO:
-- Create Frontend
-  - Will discuss basic idea
-  - React vs Angular
-  - Communicating with backend
-- Sort via text-based search on front-end
-- Complete Submission Info
-- Generate solutions given a problem
-  - Uses GPT or another NLP model trained on the dataset
-  - Inputs: problems
-  - Solutions: answers
-  - Possible Applications:
-    - Using AI to generate solutions to the problem the user is looking at / has clicked on
-    - Using AI to generate solutions to a problem the user enters themselves
-- Generate a relevant problem/solution pairs given a user's keyword
-  - Arjun is very confident in his ability to make this happen
-  - I believe in him
-  - Good luck
-
-
 # Submission Info
 
 What kind of algorithmic tool did you build?
@@ -28,7 +8,7 @@ What kind of algorithmic tool did you build?
 - Idea Filter
 - We Built Something Else!
 
-> Idea Filter
+> Idea Filter and Moonshot Finder
 
 Provide Github Repo
 
@@ -48,13 +28,13 @@ Pitch us your project in ONE sentence
 
 Provide a longer description, an abstract, of your project in 6-8 sentences.
 
-> This application sorts through the problem/solution submissions from the D^3 Institute's "Creating a Sustainable Future" challenge and uses Zero-Shot Classification AI to measure their relevance, feasibility, innovation and scalability, and pertinence to circular economies. The AI filters out any results it deems irrelevant, and provides the rest to the frontend, where users can seach by keywords and sort the results by the above metrics. (TBD explain the other AI features if we get to them)
+> This application sorts through the problem/solution submissions from the D^3 Institute's "Creating a Sustainable Future" challenge and uses Zero-Shot Classification AI to measure their relevance, feasibility, innovation and scalability, and pertinence to circular economies. The AI filters out any results it deems irrelevant, and provides the rest to the frontend, where users can seach by keywords and sort the results by the above metrics. Furthermore, users may ask a question relating to circular economies and an AI will answer the prompt with a solution.
 
 Your task for this hackathon was to "develop an algorithmic tool that features generative AI to assist in the evaluation of ideas."  How does your project augment human experiences in evaluation of innovative ideas? (Max. 150 words)
 
 Elaborate on the ways your tool delivers value to human evaluators by either automatically screening, highlighting solutions, or working with them to make more fair, accurate, and efficient evaluations.
 
-> The AI automatically measures each idea on multiple metrics, making it easy for human users to sort through the ideas based on topics or qualities they are interested in. The AI filters out ideas that are not well-formed or not relevant to circular economies, showing only the best ideas. The app also allows users to generate new solutions given a problem.
+> The AI automatically measures each idea on multiple metrics, making it easy for human users to sort through the ideas based on topics or qualities they are interested in. The AI filters out ideas that are not well-formed or not relevant to circular economies, showing only the best ideas. The app also allows users to generate new solutions given a problem. The evaluation of moonshot ideas were also determined through these mesasures, allowing human evaluators to specifically examine greatly innovative ideas.
 
 What is the most innovative aspect of your project? (Max. 100 words)
 
@@ -76,7 +56,7 @@ Which of the following GenAI tools did you use in creating your project?
 - My team did not use GenAI
 - Other:
 
-> Open-source models
+> Open-source models (Google's T5, GPT-2)
 
 If applicable, how does your tool use generative AI innovatively? Were there any unexpected outcomes or surprising findings when applying generative AI to your solution? (Max. 100 words)
 
@@ -101,8 +81,8 @@ Would you consider allowing others to contribute to your project by making certa
 
 Provide an overview of your team’s development process. How did your team approach aspects such as the division of work, and completion of major milestones?
 
-> TBD
+> Our team created timelines of completion for major components of the project. Our first step was to research and create a plan for the AI model. We approached this aspect freely, with Kiran and Arjun researching potential ways to implement the AI. We looked into Zero-Shot classification as a potential method, then Kiran and Arjun worked on coding and research simulatenously. Once the AI model was completed, we created a front-end application using React, where we identified tasks that needed completing with each person self-assigning the tasks they wanted to complete.
 
 What challenges did you face and how they were overcome?
 
-> The first struggle we faced was when we found the database did not have any "pre-classified" results. At first, we were uncertain how to make an AI model without pre-defined training data, but after performing research, we discovered Zero-Shot Classification, a subset of Zero-Shot Learning in which an AI classifies data into one of several classes, without any prior training or knowledge of the classes. As we did not have any experinece using the HuggingFace library for classification, we took it upon ourselves to learn as we went. We took several open-source large language models and tried to have them categorize the dataset into moonshot ideas, relevant ideas (for the sake of the contest), and irrelevant ideas. This approach was met with very little success, no matter how detailed the prompts for each class were. However, Google's T5 model seemed to be the best at categorizing the dataset given large, descriptive class prompts. Using this, we decided to simplify the categorization task to two categories: relevant and irrelevant. With an exhaustive description of what was considered "relevant", the AI model was able to categorize the data with a significant amount of success, enough so that we continued to refine the prompts, and add more seperate classification tasks for other metrics. Another functionality we wanted our application to have is AI-generated solutions and/or ideas. Our first approach was to train a model from scratch on the provided dataset and give it feedback using the metrics of the ZSC model, but we soon realized that our model would have to learn English, which was a daunting task. We then considered using the OpenAI GPT-3 API, but soon learned that the model was locked behind a pay-per-use subscription model. Given the time constraints, we found the best solution was to use the open-source GPT-2 model mainly as a proof of concept. (TBD add today's struggles)
+> The first struggle we faced was when we found the database did not have any "pre-classified" results. At first, we were uncertain how to make an AI model without pre-defined training data, but after performing research, we discovered Zero-Shot Classification, a subset of Zero-Shot Learning in which an AI classifies data into one of several classes, without any prior training or knowledge of the classes. As we did not have any experinece using the HuggingFace library for classification, we took it upon ourselves to learn as we went. We took several open-source large language models and tried to have them categorize the dataset into moonshot ideas, relevant ideas (for the sake of the contest), and irrelevant ideas. This approach was met with very little success, no matter how detailed the prompts for each class were. However, Google's T5 model seemed to be the best at categorizing the dataset given large, descriptive class prompts. Using this, we decided to simplify the categorization task to two categories: relevant and irrelevant. With an exhaustive description of what was considered "relevant", the AI model was able to categorize the data with a significant amount of success, enough so that we continued to refine the prompts, and add more seperate classification tasks for other metrics. Another functionality we wanted our application to have is AI-generated solutions and/or ideas. Our first approach was to train a model from scratch on the provided dataset and give it feedback using the metrics of the ZSC model, but we soon realized that our model would have to learn English, which was a daunting task. We then considered using the OpenAI GPT-3 API, but soon learned that the model was locked behind a pay-per-use subscription model. Given the time constraints, we found the best solution was to use the open-source GPT-2 model mainly as a proof of concept. In terms of creating a front-end, we had trouble with using React Bootstrap; our navigation component did not work on certain devices. To overcome this, we decided to use pure CSS to create the navbar instead.
